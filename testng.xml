@@ -4,7 +4,7 @@
   <test name="Test">
   <classes>
   <class name="main.CucumberRunner"></class>
-  <!-- <class name="main.AnotherRunner"></class> -->
+  <!-- <class name="main.AnotherRunner"></class> This class could be used to run multiple runner classes-->
   </classes>
   
   </test> <!-- Test -->
