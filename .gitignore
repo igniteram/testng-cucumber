@@ -1,0 +1,8 @@
+.settings
+.classpath
+.idea
+target/
+test-output/
+.DS_Store
+TestngCucumber.iml
+screenshots/
