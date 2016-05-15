@@ -6,3 +6,5 @@ test-output/
 .DS_Store
 TestngCucumber.iml
 screenshots/
+._.DS_Store
+.project
