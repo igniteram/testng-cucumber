@@ -9,12 +9,15 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
 * Descriptive pom.xml and testng.xml
 * Examples with multiple features and step definition files
 * Methods for running tests in Firefox and Chrome browsers
+
 ##To Get Started
+
 ####Pre-requisites
 1. The scripts have been written in Linux/MacOSX environment for Windows users please do not forget to change the "System.getProperty" in the CucumberRunner class
 2. Java installed in the system
 3. Maven installed in the system
 4. IDE(Jetbrains or Eclipse) installed in the system
+
 ####Run Scripts
 * Fork this repo, keep the folder the structure intact
 * Run the testng.xml or cucumberRunner class directly
