@@ -1,1 +1,2 @@
 ##Testng-Cucumber-Boilerplate
+Simple boilerplate to kick start your testng-cucumber project with some additional features like "CucumberOptions": tags, glue and pre-made screenshots, set environment/browser methods
