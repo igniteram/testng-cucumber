@@ -33,12 +33,12 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
        When I type "cucumber"
        Then I click submit button
        Then I clear search textbox
+
 ####Writing Step Definitions
 >     public class Clearpage extends CucumberRunner {
       @Then("^I clear search textbox$")
  	  public void Clear() throws Throwable {
-
- 		driver.findElement(By.cssSelector("input[name='q']")).clear();
+      driver.findElement(By.cssSelector("input[name='q']")).clear();
  		}
  		}
 
