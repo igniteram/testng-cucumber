@@ -26,7 +26,7 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
 * Test_Output folder should be created with the testng reports
 
 ####Writing Features
->Feature: To search cucumber in google
+>     Feature: To search cucumber in google
 
      @Regression
      Scenario: Cucumber Google
@@ -35,15 +35,36 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
        Then I click submit button
        Then I clear search textbox
 ####Writing Step Definitions
->public class Clearpage extends CucumberRunner {
+>
+    public class Clearpage extends CucumberRunner {
 
-
- 	@Then("^I clear search textbox$")
+    @Then("^I clear search textbox$")
  	public void Clear() throws Throwable {
 
  		driver.findElement(By.cssSelector("input[name='q']")).clear();
 
  	}
 
- }
+    }
 
+####Cucumber Options
+>     @CucumberOptions(
+      	strict = true,
+      	monochrome = true,
+      	features = {"src/test/resources/features/"},
+      	glue = "stepdefinition",
+      	plugin = {"pretty", "html:target/cucumber-html-report" },
+      	tags={"@Regression,@JunitScenario,@TestngScenario"})
+
+####Screenshot Hooks/Annotations
+>      @AfterMethod(alwaysRun = true)
+     	public void tearDownr(ITestResult result) throws IOException {
+     		if (result.isSuccess()) {
+     			File imageFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+     			String failureImageFileName = result.getMethod().getMethodName()
+     					+ new SimpleDateFormat("MM-dd-yyyy_HH-ss").format(new GregorianCalendar().getTime()) + ".png";
+     			File failureImageFile = new File(System.getProperty("user.dir") + "//screenshots//" + failureImageFileName);
+     			FileUtils.copyFile(imageFile, failureImageFile);
+     		}
+
+     	}
