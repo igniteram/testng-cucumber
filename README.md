@@ -13,7 +13,7 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
 ##To Get Started
 
 ####Pre-requisites
-1. The scripts have been written in Linux/MacOSX environment for Windows users please do not forget to change the "System.getProperty" in the CucumberRunner class
+1. The scripts have been written in Linux/MacOSX environment. Windows users please change the "System.getProperty" in the CucumberRunner class
 2. Java installed in the system
 3. Maven installed in the system
 4. IDE(Jetbrains or Eclipse) installed in the system
@@ -24,3 +24,26 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
 * The scripts should run successfully in firefox browser as it is defined in the config.properties file.
 * Target folder should be created with cucumber-html-report and surefire-reports.
 * Test_Output folder should be created with the testng reports
+
+####Writing Features
+>Feature: To search cucumber in google
+
+     @Regression
+     Scenario: Cucumber Google
+       Given I am in google page
+       When I type "cucumber"
+       Then I click submit button
+       Then I clear search textbox
+####Writing Step Definitions
+>public class Clearpage extends CucumberRunner {
+
+
+ 	@Then("^I clear search textbox$")
+ 	public void Clear() throws Throwable {
+
+ 		driver.findElement(By.cssSelector("input[name='q']")).clear();
+
+ 	}
+
+ }
+
