@@ -27,7 +27,6 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
 
 ####Writing Features
 >     Feature: To search cucumber in google
-
      @Regression
      Scenario: Cucumber Google
        Given I am in google page
@@ -35,17 +34,13 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
        Then I click submit button
        Then I clear search textbox
 ####Writing Step Definitions
->
-    public class Clearpage extends CucumberRunner {
-
-    @Then("^I clear search textbox$")
- 	public void Clear() throws Throwable {
+>     public class Clearpage extends CucumberRunner {
+      @Then("^I clear search textbox$")
+ 	  public void Clear() throws Throwable {
 
  		driver.findElement(By.cssSelector("input[name='q']")).clear();
-
- 	}
-
-    }
+ 		}
+ 		}
 
 ####Cucumber Options
 >     @CucumberOptions(
@@ -66,5 +61,4 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
      			File failureImageFile = new File(System.getProperty("user.dir") + "//screenshots//" + failureImageFileName);
      			FileUtils.copyFile(imageFile, failureImageFile);
      		}
-
-     	}
+     		}
