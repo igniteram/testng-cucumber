@@ -62,3 +62,6 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
      			FileUtils.copyFile(imageFile, failureImageFile);
      		}
      		}
+
+##Contributions
+For contributors who want to improve this repo by contributing some code, reporting bugs, issues or improving documentation - PR's are highly welcome, please maintain the coding style , folder structure , detailed description of documentation and bugs/issues with examples if possible.
