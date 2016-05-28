@@ -1,5 +1,5 @@
 ##Testng-Cucumber-Boilerplate
-Simple boilerplate to kick start your testng-cucumber maven java project with some additional features like "CucumberOptions": tags, glue and pre-made screenshots, set environment/browser methods
+Simple boilerplate to kick start your testng-cucumber maven java project with some additional features like "CucumberOptions": tags, glue, screenshots, set environment/browser methods
 ##Features
 * Crisp & Clear maven folder structure
 * Extensive & Descriptive methods in CucumberRunner class
