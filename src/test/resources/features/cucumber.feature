@@ -2,7 +2,7 @@ Feature: To search cucumber in google
 
     @Regression
     Scenario: Cucumber Google
-      Given I am in google page
+      Given I am on google page
       When I type "cucumber"
-      Then I click submit button
+      Then I click search button
       Then I clear search textbox

@@ -5,10 +5,10 @@ import org.openqa.selenium.By;
 import cucumber.api.java.en.Then;
 import main.CucumberRunner;
 
-public class Submit extends CucumberRunner {
+public class SearchButton extends CucumberRunner {
 
-	@Then("^I click submit button$")
-	public void submitButton() throws Throwable {
+	@Then("^I click search button$")
+	public void searchButton() throws Throwable {
 		driver.findElement(By.name("btnG")).click();
 
 	}
