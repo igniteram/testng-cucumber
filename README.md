@@ -21,7 +21,8 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
 ####Run Scripts
 * Fork this repo, keep the folder the structure intact
 * Run the testng.xml or mvn clean test since it is an maven project
-* The scripts should run successfully in Chrome browser as it is defined in the config.properties file.
+* The scripts should run successfully in Firefox browser as it is defined in the config.properties file.
+* To run the scripts in Chrome browser, specific chromedriver should be downloaded and config.prop should be set to browser_type as "Chrome"
 * Target folder should be created with cucumber-html-report and surefire-reports.
 * Test_Output folder should be created with the testng reports
 
