@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="none">
-  <test name="Test">
+<suite name="Testng Cucumber Suite" parallel="none">
+  <test name="Run All Tests">
   <classes>
   <class name="main.CucumberRunner"></class>
   <!-- <class name="main.AnotherRunner"></class> This class could be used to run multiple runner classes-->
