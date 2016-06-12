@@ -1,7 +1,7 @@
 ##Testng-Cucumber-Boilerplate
 Simple boilerplate to kick start your testng-cucumber maven java project with some additional features like "CucumberOptions": tags, glue, screenshots, set environment/browser methods
 ##Features
-* Crisp & Clear maven folder structure
+* Crisp & Clear maven folder structures
 * Extensive methods in CucumberRunner class
 * CucumberOptions with detailed explanation of using "tags", "glue"
 * Screenshots on failure feature in CucumberRunner class
@@ -24,7 +24,7 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
 * The scripts should run successfully in Firefox browser as it is defined in the config.properties file.
 * To run the scripts in Chrome browser, specific chromedriver(windows/linux) should be downloaded and config.prop should be set to browser_type as "Chrome"
 * Target folder should be created with cucumber-html-report and surefire-reports.
-* Test_Output folder should be created with the testng reports
+* Test_Output folder should be created with the default testng reports
 
 ####Writing Features
 >     Feature: To search cucumber in google
