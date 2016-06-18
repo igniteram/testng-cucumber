@@ -38,10 +38,10 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
 ####Writing Step Definitions
 >     public class Clearpage extends CucumberRunner {
       @Then("^I clear search textbox$")
- 	  public void Clear() throws Throwable {
+      public void Clear() throws Throwable {
       driver.findElement(By.cssSelector("input[name='q']")).clear();
- 		}
- 		}
+      }
+      }
 
 ####Cucumber Options
 >     @CucumberOptions(
@@ -68,7 +68,7 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
 Default cucumber HTML reports are generated which can be customized according to specific needs
 ##### Success Cucumber Report
 
-![successcucumberreport](images/success cucumber report.png?raw=true)
+![successcucumberreport](https://raw.githubusercontent.com/igniteram/testng-cucumber/master/images/success%20cucumber%20report.png)
 
 
 ##Contributions
