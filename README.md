@@ -1,4 +1,4 @@
-##Testng-Cucumber-Boilerplate
+## Testng-Cucumber-Boilerplate  [![Build Status](https://travis-ci.org/igniteram/testng-cucumber.svg?branch=master)](https://travis-ci.org/igniteram/testng-cucumber)
 Simple boilerplate to kick start your testng-cucumber maven java project with some additional features like "CucumberOptions": tags, glue, screenshots, set environment/browser methods
 ##Features
 * Crisp & Clear maven folder structures
