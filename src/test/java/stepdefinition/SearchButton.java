@@ -9,7 +9,7 @@ public class SearchButton extends CucumberRunner {
 
 	@Then("^I click search button$")
 	public void searchButton() throws Throwable {
-		driver.findElement(By.name("btnG1")).click();
+		driver.findElement(By.name("btnG")).click();
 
 	}
 
