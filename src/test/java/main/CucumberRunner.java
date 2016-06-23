@@ -28,8 +28,8 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @CucumberOptions(
 		strict = true,
 		monochrome = true, 
-		features = {"src/test/resources/features/"},
-		glue = "stepdefinition", 
+		features = "src/test/resources/features",
+		glue = "stepdefinition",
 		plugin = {"pretty", "html:target/cucumber-html-report" },
 		tags={"@Regression,@JunitScenario,@TestngScenario"})
 
