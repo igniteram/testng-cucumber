@@ -4,8 +4,8 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
 * Crisp & Clear maven folder structures
 * Extensive methods in CucumberRunner class
 * CucumberOptions with detailed explanation of using "tags", "glue"
-* Screenshots on failure feature in CucumberRunner class
-* Testng Annotations/hooks like "BeforeSuite", "AfterClass", "AfterMethod" etc.
+* Screenshots on failure feature in **CucumberRunner** class
+* TestNG Annotations/hooks like "BeforeSuite", "AfterClass", "AfterMethod" etc.
 * Descriptive pom.xml and testng.xml
 * Examples with multiple features and step definition files
 * Methods for running tests in Firefox and Chrome browsers
@@ -13,7 +13,7 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
 ##To Get Started
 
 ####Pre-requisites
-1. The scripts have been written in MacOSX environment. Windows users please change the "System.getProperty" in the CucumberRunner class
+1. The scripts have been written in **MacOSX** environment. Windows users please change the ```"System.getProperty"``` in the CucumberRunner class
 2. Java installed in the system
 3. Maven installed in the system
 4. IDE(Jetbrains or Eclipse) installed in the system
@@ -21,10 +21,10 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
 ####Run Scripts
 * Fork this repo, keep the folder the structure intact
 * Run the testng.xml or mvn clean test since it is an maven project
-* The scripts should run successfully in Firefox browser as it is defined in the config.properties file.
+* The scripts should run successfully in **Firefox** browser as it is defined in the config.properties file.
 * To run the scripts in Chrome browser, specific chromedriver(windows/linux) should be downloaded and config.prop should be set to browser_type as "Chrome"
 * Target folder should be created with cucumber-html-report and surefire-reports.
-* Test_Output folder should be created with the default testng reports
+* **Test_Output** folder should be created with the default testng reports
 
 ####Writing Features
 >     Feature: To search cucumber in google
