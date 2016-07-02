@@ -47,7 +47,8 @@
 
       <section id="main_content">
         <h2>
-<a id="testng-cucumber-boilerplate" class="anchor" href="#testng-cucumber-boilerplate" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testng-Cucumber-Boilerplate</h2>
+<a id="testng-cucumber-boilerplate--" class="anchor" href="#testng-cucumber-boilerplate--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testng-Cucumber-Boilerplate  <a href="https://travis-ci.org/igniteram/testng-cucumber"><img src="https://travis-ci.org/igniteram/testng-cucumber.svg?branch=master" alt="Build Status"></a>
+</h2>
 
 <p>Simple boilerplate to kick start your testng-cucumber maven java project with some additional features like "CucumberOptions": tags, glue, screenshots, set environment/browser methods</p>
 
@@ -58,8 +59,8 @@
 <li>Crisp &amp; Clear maven folder structures</li>
 <li>Extensive methods in CucumberRunner class</li>
 <li>CucumberOptions with detailed explanation of using "tags", "glue"</li>
-<li>Screenshots on failure feature in CucumberRunner class</li>
-<li>Testng Annotations/hooks like "BeforeSuite", "AfterClass", "AfterMethod" etc.</li>
+<li>Screenshots on failure feature in <strong>CucumberRunner</strong> class</li>
+<li>TestNG Annotations/hooks like "BeforeSuite", "AfterClass", "AfterMethod" etc.</li>
 <li>Descriptive pom.xml and testng.xml</li>
 <li>Examples with multiple features and step definition files</li>
 <li>Methods for running tests in Firefox and Chrome browsers</li>
@@ -72,7 +73,7 @@
 <a id="pre-requisites" class="anchor" href="#pre-requisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pre-requisites</h4>
 
 <ol>
-<li>The scripts have been written in MacOSX environment. Windows users please change the "System.getProperty" in the CucumberRunner class</li>
+<li>The scripts have been written in <strong>MacOSX</strong> environment. Windows users please change the <code>"System.getProperty"</code> in the CucumberRunner class</li>
 <li>Java installed in the system</li>
 <li>Maven installed in the system</li>
 <li>IDE(Jetbrains or Eclipse) installed in the system</li>
@@ -84,10 +85,11 @@
 <ul>
 <li>Fork this repo, keep the folder the structure intact</li>
 <li>Run the testng.xml or mvn clean test since it is an maven project</li>
-<li>The scripts should run successfully in Firefox browser as it is defined in the config.properties file.</li>
+<li>The scripts should run successfully in <strong>Firefox</strong> browser as it is defined in the config.properties file.</li>
 <li>To run the scripts in Chrome browser, specific chromedriver(windows/linux) should be downloaded and config.prop should be set to browser_type as "Chrome"</li>
 <li>Target folder should be created with cucumber-html-report and surefire-reports.</li>
-<li>Test_Output folder should be created with the default testng reports</li>
+<li>
+<strong>Test_Output</strong> folder should be created with the default testng reports</li>
 </ul>
 
 <h4>
@@ -112,8 +114,8 @@
   @Then("^I clear search textbox$")
   public void Clear() throws Throwable {
   driver.findElement(By.cssSelector("input[name='q']")).clear();
-    }
-    }
+  }
+  }
 </code></pre>
 </blockquote>
 
@@ -156,7 +158,7 @@
 <h5>
 <a id="success-cucumber-report" class="anchor" href="#success-cucumber-report" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Success Cucumber Report</h5>
 
-<p><img src="https://raw.githubusercontent.com/igniteram/testng-cucumber/master/images/success%20cucumber%20report.png" alt="cucumberreport"></p>
+<p><img src="https://raw.githubusercontent.com/igniteram/testng-cucumber/master/images/success%20cucumber%20report.png" alt="successcucumberreport"></p>
 
 <h2>
 <a id="contributions" class="anchor" href="#contributions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributions</h2>
