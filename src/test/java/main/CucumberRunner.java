@@ -56,14 +56,14 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 
 			driver = new FirefoxDriver();
 		} else if (config.getProperty("browserType").equals("Chrome")) {
-			String chromeDriverPath = "./src/test/resources/drivers/chromedriver";
-			System.out.println(chromeDriverPath);
-			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-			// ChromeOptions options = new ChromeOptions();
-			// options.setBinary("/usr/local/bin/chromedriver");
-			// options.addArguments("--headless");
-			// options.addArguments("--disable-gpu");
-			driver = new ChromeDriver();
+			// String chromeDriverPath = "./src/test/resources/drivers/chromedriver";
+			// System.out.println(chromeDriverPath);
+			// System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+			ChromeOptions options = new ChromeOptions();
+			options.setBinary("/usr/local/bin/chromedriver");
+			options.addArguments("--headless");
+			options.addArguments("--disable-gpu");
+			driver = new ChromeDriver(options);
 		}
 	}
 
