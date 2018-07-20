@@ -57,10 +57,8 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 			driver = new FirefoxDriver();
 		} else if (config.getProperty("browserType").equals("Chrome")) {
 			String chromeDriverPath = "/usr/local/bin/chromedriver";
-			System.out.println(chromeDriverPath);
 			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 			ChromeOptions options = new ChromeOptions();
-			// options.setBinary("/usr/local/bin/chromedriver");
 			options.addArguments("--headless");
 			options.addArguments("--disable-gpu");
 			options.addArguments("--no-sandbox");
