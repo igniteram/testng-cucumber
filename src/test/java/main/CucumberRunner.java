@@ -17,6 +17,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -55,7 +56,13 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 
 			driver = new FirefoxDriver();
 		} else if (config.getProperty("browserType").equals("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+			String chromeDriverPath = "./src/test/resources/drivers/chromedriver";
+			System.out.println(chromeDriverPath);
+			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+			// ChromeOptions options = new ChromeOptions();
+			// options.setBinary("/usr/local/bin/chromedriver");
+			// options.addArguments("--headless");
+			// options.addArguments("--disable-gpu");
 			driver = new ChromeDriver();
 		}
 	}
