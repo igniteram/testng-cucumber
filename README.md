@@ -1,6 +1,6 @@
 ## Testng-Cucumber-Boilerplate  [![Build Status](https://travis-ci.org/igniteram/testng-cucumber.svg?branch=master)](https://travis-ci.org/igniteram/testng-cucumber)
 Simple boilerplate to kick start your testng-cucumber maven java project with some additional features like "CucumberOptions": tags, glue, screenshots, set environment/browser methods
-##Features
+## Features
 * Crisp & Clear maven folder structures
 * Extensive methods in CucumberRunner class
 * CucumberOptions with detailed explanation of using "tags", "glue"
@@ -10,15 +10,15 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
 * Examples with multiple features and step definition files
 * Methods for running tests in Firefox and Chrome browsers
 
-##To Get Started
+## To Get Started
 
-####Pre-requisites
+#### Pre-requisites
 1. The scripts have been written in **MacOSX** environment. Windows users please change the ```"System.getProperty"``` in the CucumberRunner class
 2. Java installed in the system
 3. Maven installed in the system
 4. IDE(Jetbrains or Eclipse) installed in the system
 
-####Run Scripts
+#### Run Scripts
 * Fork this repo, keep the folder the structure intact
 * Run the testng.xml or mvn clean test since it is an maven project
 * The scripts should run successfully in **Firefox** browser as it is defined in the config.properties file.
@@ -26,7 +26,7 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
 * Target folder should be created with cucumber-html-report and surefire-reports.
 * **Test_Output** folder should be created with the default testng reports
 
-####Writing Features
+#### Writing Features
 >     Feature: To search cucumber in google
      @Regression
      Scenario: Cucumber Google
@@ -35,7 +35,7 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
        Then I click submit button
        Then I clear search textbox
 
-####Writing Step Definitions
+#### Writing Step Definitions
 >     public class Clearpage extends CucumberRunner {
       @Then("^I clear search textbox$")
       public void Clear() throws Throwable {
@@ -43,7 +43,7 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
       }
       }
 
-####Cucumber Options
+#### Cucumber Options
 >     @CucumberOptions(
       	strict = true,
       	monochrome = true,
@@ -52,7 +52,7 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
       	plugin = {"pretty", "html:target/cucumber-html-report" },
       	tags={"@Regression,@JunitScenario,@TestngScenario"})
 
-####Screenshot Hooks/Annotations
+#### Screenshot Hooks/Annotations
 >      @AfterMethod(alwaysRun = true)
      	public void tearDownr(ITestResult result) throws IOException {
      		if (result.isSuccess()) {
@@ -64,12 +64,12 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
      		}
      		}
 
-####HTML Reports
+#### HTML Reports
 Default cucumber HTML reports are generated which can be customized according to specific needs
 ##### Success Cucumber Report
 
 ![successcucumberreport](https://raw.githubusercontent.com/igniteram/testng-cucumber/master/images/success%20cucumber%20report.png)
 
 
-##Contributions
+## Contributions
 For contributors who want to improve this repo by contributing some code, reporting bugs, issues or improving documentation - PR's are highly welcome, please maintain the coding style , folder structure , detailed description of documentation and bugs/issues with examples if possible.
