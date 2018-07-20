@@ -55,8 +55,7 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 
 			driver = new FirefoxDriver();
 		} else if (config.getProperty("browserType").equals("Chrome")) {
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + "//src//test//resources//drivers/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			driver = new ChromeDriver();
 		}
 	}
