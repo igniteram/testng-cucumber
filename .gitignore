@@ -9,3 +9,4 @@ screenshots/
 ._.DS_Store
 .project
 TestngCucumberBoilerPlate.iml
+.vscode
