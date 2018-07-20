@@ -10,12 +10,16 @@ import java.util.GregorianCalendar;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.io.FileUtils;
+import com.google.common.io.Files;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -65,6 +69,11 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 		driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
 	}
 
+	public void explicitWait(WebElement element) {
+		WebDriverWait wait  = new WebDriverWait(driver, 3000);
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+
 	public void pageLoad(int time) {
 		driver.manage().timeouts().pageLoadTimeout(time, TimeUnit.SECONDS);
 	}
@@ -98,7 +107,10 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 	@AfterClass(alwaysRun = true)
 	public void takeScreenshot() throws IOException {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir") + "//screenshots/screenshot.png"));
+		File trgtFile = new File(System.getProperty("user.dir") + "//screenshots/screenshot.png");
+		trgtFile.getParentFile().mkdir();
+		trgtFile.createNewFile();
+		Files.copy(scrFile, trgtFile);
 
 	}
 
@@ -109,7 +121,9 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 			String failureImageFileName = result.getMethod().getMethodName()
 					+ new SimpleDateFormat("MM-dd-yyyy_HH-ss").format(new GregorianCalendar().getTime()) + ".png";
 			File failureImageFile = new File(System.getProperty("user.dir") + "//screenshots//" + failureImageFileName);
-			FileUtils.copyFile(imageFile, failureImageFile);
+			failureImageFile.getParentFile().mkdir();
+			failureImageFile.createNewFile();
+			Files.copy(imageFile, failureImageFile);
 		}
 
 	}
