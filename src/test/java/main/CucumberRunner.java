@@ -63,6 +63,8 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 			options.setBinary("/usr/local/bin/chromedriver");
 			options.addArguments("--headless");
 			options.addArguments("--disable-gpu");
+			options.addArguments("--no-sandbox");
+        	options.addArguments("--disable-dev-shm-usage");
 			driver = new ChromeDriver(options);
 		}
 	}
