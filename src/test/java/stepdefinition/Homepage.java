@@ -5,7 +5,7 @@ import org.testng.Assert;
 import cucumber.api.java.en.Given;
 import main.CucumberRunner;
 
-public class Homepage extends CucumberRunner {
+public class HomePage extends CucumberRunner {
 
 	@Given("^I am on \"(.*?)\" search page$")
 	public void googlePage(String text) throws Throwable {

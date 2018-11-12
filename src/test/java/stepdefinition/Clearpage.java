@@ -1,19 +1,17 @@
 package stepdefinition;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
 import cucumber.api.java.en.Then;
 import main.CucumberRunner;
+import pages.SearchPage;
 
-public class Clearpage extends CucumberRunner {
-	
+public class ClearPage extends CucumberRunner {
+
+	SearchPage page = new SearchPage();
 
 	@Then("^I clear search textbox$")
 	public void Clear() throws Throwable {
-		WebElement clearSearchBox = driver.findElement(By.cssSelector("input[name='q']"));
-		explicitWait(clearSearchBox);
-		clearSearchBox.clear();
+		explicitWait(page.searchBox);
+		page.searchBox.clear();
 
 	}
 
