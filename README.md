@@ -13,47 +13,61 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
 ## To Get Started
 
 #### Pre-requisites
-1. The scripts have been written in **MacOSX** environment. Windows users please change the ```"System.getProperty"``` in the CucumberRunner class
-2. Java installed in the system
-3. Maven installed in the system
-4. IDE(Jetbrains or Eclipse) installed in the system
+1. Java installed in the system
+2. Maven installed in the system
 
 #### Run Scripts
 * Fork this repo, keep the folder the structure intact
-* Run the testng.xml or mvn clean test since it is an maven project
-* The scripts should run successfully in **Firefox** browser as it is defined in the config.properties file.
-* To run the scripts in Chrome browser, specific chromedriver(windows/linux) should be downloaded and config.prop should be set to browser_type as "Chrome"
+* Run the following maven command from command line 
+```
+mvn clean test
+```
+* The scripts should run successfully in **Chrome** browser as it is defined in the **config.properties** file.
 * Target folder should be created with cucumber-html-report and surefire-reports.
 * **Test_Output** folder should be created with the default testng reports
 
 #### Writing Features
->     Feature: To search cucumber in google
+```
+ Feature: To search cucumber in google
      @Regression
      Scenario: Cucumber Google
        Given I am in google page
        When I type "cucumber"
        Then I click submit button
        Then I clear search textbox
+```
+
 
 #### Writing Step Definitions
->     public class Clearpage extends CucumberRunner {
-      @Then("^I clear search textbox$")
+
+```
+public class Clearpage extends CucumberRunner {
+    @Then("^I clear search textbox$")
       public void Clear() throws Throwable {
       driver.findElement(By.cssSelector("input[name='q']")).clear();
-      }
-      }
+    }
+}
+```
+
 
 #### Cucumber Options
->     @CucumberOptions(
+
+```
+ @CucumberOptions(
       	strict = true,
       	monochrome = true,
       	features = {"src/test/resources/features/"},
       	glue = "stepdefinition",
       	plugin = {"pretty", "html:target/cucumber-html-report" },
-      	tags={"@Regression,@JunitScenario,@TestngScenario"})
+      	tags={"@Regression,@JunitScenario,@TestngScenario"}
+        )
+```
+
 
 #### Screenshot Hooks/Annotations
->      @AfterMethod(alwaysRun = true)
+
+```
+ @AfterMethod(alwaysRun = true)
      	public void tearDownr(ITestResult result) throws IOException {
      		if (result.isSuccess()) {
      			File imageFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -62,7 +76,9 @@ Simple boilerplate to kick start your testng-cucumber maven java project with so
      			File failureImageFile = new File(System.getProperty("user.dir") + "//screenshots//" + failureImageFileName);
      			FileUtils.copyFile(imageFile, failureImageFile);
      		}
-     		}
+     	}
+```
+
 
 #### HTML Reports
 Default cucumber HTML reports are generated which can be customized according to specific needs
