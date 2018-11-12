@@ -45,16 +45,35 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 		config.load(ip);
 	}
 
+	public void configureDriverPath() throws IOException {
+		if(System.getProperty("os.name").startsWith("Linux")) {
+			String firefoxDriverPath = System.getProperty("user.dir") + "/src/test/resources/drivers/linux/geckodriver";
+			System.setProperty("webdriver.gecko.driver", firefoxDriverPath);
+			String chromeDriverPath = System.getProperty("user.dir") + "/src/test/resources/drivers/linux/chromedriver";
+			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+		}
+		if(System.getProperty("os.name").startsWith("Mac")) {
+			String firefoxDriverPath = System.getProperty("user.dir") + "/src/test/resources/drivers/mac/geckodriver";
+			System.setProperty("webdriver.gecko.driver", firefoxDriverPath);
+			String chromeDriverPath = System.getProperty("user.dir") + "/src/test/resources/drivers/mac/chromedriver";
+			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+		}
+		if(System.getProperty("os.name").startsWith("Windows")) {
+			String firefoxDriverPath = System.getProperty("user.dir") + "//src//test//resources//drivers//windows//geckodriver.exe";
+			System.setProperty("webdriver.gecko.driver", firefoxDriverPath);
+			String chromeDriverPath = System.getProperty("user.dir") + "//src//test//resources//drivers//windows//chromedriver.exe";
+			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+		}
+	}
+
 	public void openBrowser() throws Exception {
+		// loads the config options
 		LoadConfigProperty();
+		// configures the driver path
+		configureDriverPath();
 		if (config.getProperty("browserType").equals("firefox")) {
-			String firefoxDriverPath = System.getProperty("user.dir") + "/src/test/resources/drivers/geckodriver";
-			System.setProperty("webdriver.chrome.driver", firefoxDriverPath);
 			driver = new FirefoxDriver();
 		} else if (config.getProperty("browserType").equals("chrome")) {
-			// /usr/local/bin/chromedriver
-			String chromeDriverPath = System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver";
-			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--headless");
 			options.addArguments("--disable-gpu");
