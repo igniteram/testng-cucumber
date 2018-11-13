@@ -9,7 +9,7 @@ public class ClearPage extends CucumberRunner {
 	SearchPage page = new SearchPage();
 
 	@Then("^I clear search textbox$")
-	public void Clear() throws Throwable {
+	public void clearSearchBox() throws Throwable {
 		explicitWait(page.searchBox);
 		page.searchBox.clear();
 

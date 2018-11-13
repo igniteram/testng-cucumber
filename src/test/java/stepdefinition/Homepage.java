@@ -8,7 +8,7 @@ import main.CucumberRunner;
 public class HomePage extends CucumberRunner {
 
 	@Given("^I am on \"(.*?)\" search page$")
-	public void googlePage(String text) throws Throwable {
+	public void verifyPageTitle(String text) throws Throwable {
 
 		String title = driver.getTitle();
 			if(text == "google") {
