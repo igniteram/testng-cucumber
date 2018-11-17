@@ -82,9 +82,12 @@ public class Clearpage extends CucumberRunner {
 
 #### HTML Reports
 Default cucumber HTML reports are generated which can be customized according to specific needs
-##### Success Cucumber Report
+##### Success Cucumber Reports
 
-![successcucumberreport](https://raw.githubusercontent.com/igniteram/testng-cucumber/master/images/success%20cucumber%20report.png)
+![report1](./images/report1.png)
+![report2](./images/report2.png)
+![report3](./images/report3.png)
+
 
 
 ## Contributions
