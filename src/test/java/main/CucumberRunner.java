@@ -29,9 +29,9 @@ import org.testng.annotations.BeforeSuite;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
+import helpers.ReportHelper;
 
-@CucumberOptions(strict = true, monochrome = true, features = "src/test/resources/features", glue = "stepdefinition", plugin = {
-		"pretty", "html:target/cucumber-html-report" }, tags = { "@Regression,@JunitScenario,@TestngScenario" })
+@CucumberOptions(strict = true, monochrome = true, features = "src/test/resources/features", glue = "stepdefinition", format = {"pretty","json:target/cucumber.json"}, tags = { "@Regression,@JunitScenario,@TestngScenario" })
 
 public class CucumberRunner extends AbstractTestNGCucumberTests {
 
@@ -149,6 +149,10 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 			Files.copy(imageFile, failureImageFile);
 		}
 
+	}
+	@AfterSuite(alwaysRun=true)
+	public void generateHTMLReports() {
+		ReportHelper.generateCucumberReport();
 	}
 
 	@AfterSuite(alwaysRun = true)
