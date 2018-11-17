@@ -4,7 +4,7 @@ import cucumber.api.java.en.Then;
 import main.CucumberRunner;
 import pages.SearchPage;
 
-public class ClearPage extends CucumberRunner {
+public class Clear extends CucumberRunner {
 
 	SearchPage page = new SearchPage();
 
