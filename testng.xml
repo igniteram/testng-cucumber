@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Testng Cucumber Suite" parallel="none">
+<suite name="Testng Cucumber Suite" parallel="tests">
   <test name="Run All Tests">
   <classes>
   <class name="main.CucumberRunner"></class>
